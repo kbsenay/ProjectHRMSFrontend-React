@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import { Icon, Menu, Table } from 'semantic-ui-react'
 import JobAdvertService from '../Services/jobAdvertService'
 
 export default function JobAdvertList() {
@@ -8,8 +9,8 @@ export default function JobAdvertList() {
 
     useEffect(() => {
         let jobAdvertService = new JobAdvertService()
-        jobAdvertService.getJobAdverts().then(result=>setJobAdverts(result.data.data))
-    })
+        jobAdvertService.getAllByIsActiveTrue().then(result=>setJobAdverts(result.data.data))
+    }, []);
 
     return (
 
@@ -17,16 +18,22 @@ export default function JobAdvertList() {
             <Table celled>
                 <Table.Header>
                     <Table.Row>
+                    <Table.HeaderCell>Pozisyon</Table.HeaderCell>
+                    <Table.HeaderCell>İşveren</Table.HeaderCell>
+                    <Table.HeaderCell>Şehir</Table.HeaderCell>
                         <Table.HeaderCell>İlân Açıklaması</Table.HeaderCell>
+                        {/* <Table.HeaderCell>Min Ücret</Table.HeaderCell> */}
                         <Table.HeaderCell>Maks Ücret</Table.HeaderCell>
-                        <Table.HeaderCell>Min Ücret</Table.HeaderCell>
                         <Table.HeaderCell>Alınacak Kişi Sayısı</Table.HeaderCell>
-                        <Table.HeaderCell>Header</Table.HeaderCell>
-                        <Table.HeaderCell>Yayında Kalma Süresi</Table.HeaderCell>
                         <Table.HeaderCell>Yayın Tarihi</Table.HeaderCell>
-                        <Table.HeaderCell>İşveren</Table.HeaderCell>
-                        <Table.HeaderCell>Pozisyon</Table.HeaderCell>
-                        <Table.HeaderCell>Şehir</Table.HeaderCell>
+                        <Table.HeaderCell>Yayında Kalma Süresi</Table.HeaderCell>
+                        <Table.HeaderCell>İletişim</Table.HeaderCell>
+                        <Table.HeaderCell>Web Adres</Table.HeaderCell>
+                       
+                        
+                        
+                       
+                        
                     </Table.Row>
                 </Table.Header>
 
@@ -34,16 +41,18 @@ export default function JobAdvertList() {
                     {
                         jobAdverts.map(jobAdvert => (
                             <Table.Row key={jobAdvert.id}>
-                                <Table.Cell>jobAdvert.jobDescription</Table.Cell>
-                                <Table.Cell>jobAdvert.maxSalary</Table.Cell>
-                                <Table.Cell>jobAdvert.vacantPosition</Table.Cell>
-                                <Table.Cell>jobAdvert.deadline</Table.Cell>
-                                <Table.Cell>jobAdvert.publishedDate</Table.Cell>
-                                <Table.Cell>jobAdvert.employer.companyName</Table.Cell>
-                                <Table.Cell>jobAdvert.employer.phoneNumber</Table.Cell>
-                                <Table.Cell>jobAdvert.employer.wedAddress</Table.Cell>
-                                <Table.Cell>jobAdvert.jobPosition.position</Table.Cell>
-                                <Table.Cell>jobAdvert.city.cityName</Table.Cell>
+                                <Table.Cell><Link to={`/jobAdverts/${jobAdvert.id}`} >{jobAdvert.jobPosition.position}</Link></Table.Cell>
+                                <Table.Cell>{jobAdvert.employer.companyName}</Table.Cell>
+                                <Table.Cell>{jobAdvert.city.cityName}</Table.Cell>
+                                <Table.Cell>{jobAdvert.jobDescription}</Table.Cell>
+                                <Table.Cell>{jobAdvert.maxSalary}</Table.Cell>
+                                <Table.Cell>{jobAdvert.vacantPosition}</Table.Cell>
+                                <Table.Cell>{jobAdvert.publishedDate}</Table.Cell>
+                                <Table.Cell>{jobAdvert.deadline}</Table.Cell>
+                                <Table.Cell>{jobAdvert.employer.phoneNumber}</Table.Cell>
+                                <Table.Cell>{jobAdvert.employer.wedAddress}</Table.Cell>
+                                
+                               
                             </Table.Row>
                         ))}
                 </Table.Body>

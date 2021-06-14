@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Menu} from 'semantic-ui-react'
+import { Button, Menu } from 'semantic-ui-react'
 
 export default function SideBar() {
     return (
@@ -22,7 +22,9 @@ export default function SideBar() {
 
                     İş Pozisyonu
                 </Menu.Item>
-
+            </Menu>
+            
+            <Menu vertical>
                 <Menu.Item
                     name='Eğitim Seviyesi'
 
@@ -30,10 +32,12 @@ export default function SideBar() {
 
                     Eğitim Seviyesi
                 </Menu.Item>
-                <Menu.Item>
-                    <Button color='blue'>Uygula</Button>
-                </Menu.Item>
             </Menu>
+            <Button.Group>
+            <Button color='blue'>Uygula</Button>
+            </Button.Group>
+            
+                
         </div>
     )
 }
