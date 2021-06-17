@@ -23,7 +23,7 @@ function handleSignIn() {
             <Menu size='large'>
                 <Container>
                     <Menu.Item
-                        name='Anasayfa'
+                         name='Anasayfa'
                     />
                     <Menu.Menu position='right'>
 

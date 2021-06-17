@@ -9,5 +9,11 @@ export default class JobAdvertService{
         return axios.get("http://localhost:8080/app/jobadvert/getAllByIsActiveTrueAndPublishedAtDesc")
     }
 
+    getAllById(id){
+        return axios.get("http://localhost:8080/app/jobadvert/getByJobAdvertisementId?id="+id)
+    }
+
+
+    
     
 }
