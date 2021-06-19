@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon, Menu, Table } from 'semantic-ui-react'
 import JobAdvertService from '../Services/jobAdvertService'
-
+ 
 export default function JobAdvertList() {
 
     const [jobAdverts, setJobAdverts] = useState([])

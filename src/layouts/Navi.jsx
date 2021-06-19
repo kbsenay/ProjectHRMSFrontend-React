@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
-import { Button, Menu, Container } from 'semantic-ui-react'
+import { Button, Menu, Container, Image } from 'semantic-ui-react'
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
 import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Navi() {
 
@@ -18,13 +19,17 @@ function handleSignIn() {
     setIsAuthenticated(true)
 }
 
+//name='Anasayfa' 
     return (
         <div>
             <Menu size='large'>
-                <Container>
-                    <Menu.Item
-                         name='Anasayfa'
-                    />
+                <Container className="navi">
+                    <Menu.Item name='Ana Sayfa' as={Link} to={"/"}>
+                       <Image
+                       size='mini'
+                       src='https://res.cloudinary.com/kbsenay/image/upload/v1623965559/HRMSProject/HRMS_Logo_be7mw9.jpg'
+                   />
+                    </Menu.Item>
                     <Menu.Menu position='right'>
 
 

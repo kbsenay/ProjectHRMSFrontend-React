@@ -10,7 +10,7 @@ export default class JobAdvertService{
     }
 
     getAllById(id){
-        return axios.get("http://localhost:8080/app/jobadvert/getByJobAdvertisementId?id="+id)
+        return axios.get("http://localhost:8080/app/jobadvert/getByJobAdvertId?id="+id)
     }
 
 

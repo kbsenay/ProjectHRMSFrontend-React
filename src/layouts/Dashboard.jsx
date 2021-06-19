@@ -12,14 +12,13 @@ export default function Dashboard() {
             <Grid>
                 <Grid.Row>
                 <Grid.Column width={4}>
-                    <SideBar/>
+                <Route exact path="/jobAdverts" component={SideBar}/>
                     </Grid.Column>
                     <Grid.Column width={12}>
-                    <Route exact path="/" component={JobAdvertList} />
+                    <Route exact path="/" />
                     <Route exact path="/jobAdverts" component={JobAdvertList} />
                     <Route path="/jobAdverts/:id" component={JobAdvertDetail} />
                     </Grid.Column>
-                   
                 </Grid.Row>
             </Grid>
            
