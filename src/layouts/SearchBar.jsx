@@ -1,40 +1,62 @@
-import React from 'react'
-import { Dropdown, Button, Menu, Container, Input, Icon, Form } from 'semantic-ui-react'
-import { Route } from 'react-router';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Dropdown, Button, Menu, Container, Input, Icon } from 'semantic-ui-react'
+import CityService from '../Services/cityService';
+
+
 
 export default function SearchBar() {
+
+  const [cities, setCities] = useState([])
+
+  useEffect(() => {
+    let cityService = new CityService()
+    cityService.getAll().then(result => {
+      setCities(result.data.data)
+
+    });
+  }, [])
+
+  const cityOption = cities.map((city, index) => ({
+    key: index,
+    text: city.cityName,
+    value: city.id,
+  }));
 
   return (
 
 
     <Container>
       <div>
-      <Menu position=''>
+        <Menu className="searchbar">
+          <Input type='text' inputPosition='left' icon='search' iconPosition='left' placeholder='Pozisyon, firma, sektör...' />
+          
+            <Dropdown
+              clearable
+              item content icon='map marker alternate'
+              placeholder="Şehir"
+              search
+              selection
+              options={cityOption} />
+            
+          
 
-        <Input type='text' inputPosition='left' icon='search' iconPosition='left' placeholder='Pozisyon, firma, sektör...' />
-        <Icon name='map marker alternate' size='large'></Icon>
 
 
-        <Dropdown item text='Şehir'   >
-          <Dropdown.Menu >
-            <Dropdown.Item>İstanbul</Dropdown.Item>
-            <Dropdown.Item>Ankara</Dropdown.Item>
-            <Dropdown.Item>İzmir</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Menu.Item>
-          <Button><a>İŞ ARA</a></Button>
-        </Menu.Item>
-        <Menu.Item>
-          <div class="detailed-search">
-            <a href="http://localhost:3000/jobAdverts/" onClick="('http://localhost:3000/jobAdverts/')">
-              DETAYLI ARA
-            </a>
-          </div>
 
-        </Menu.Item>
-      </Menu>
+
+
+          <Menu.Item>
+            <Button><a>İŞ ARA</a></Button>
+          </Menu.Item>
+          <Menu.Item>
+            <div class="detailed-search">
+              <a href="http://localhost:3000/jobAdverts/" onClick="('http://localhost:3000/jobAdverts/')">
+                DETAYLI ARA
+              </a>
+            </div>
+
+          </Menu.Item>
+        </Menu>
       </div>
     </Container>
 

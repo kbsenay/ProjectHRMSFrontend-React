@@ -9,7 +9,7 @@ import { Route } from 'react-router';
 function App() {
   return (
     <div className="App">
-      <Navi/>
+      <Navi className="main"/>
       
       <Route exact path="/" component={SearchBar} />
 

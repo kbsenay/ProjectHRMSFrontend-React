@@ -4,6 +4,8 @@ import { Grid} from 'semantic-ui-react';
 import SideBar from './SideBar';
 import { Route } from 'react-router';
 import JobAdvertDetail from '../pages/JobAdvertDetail';
+import { Image } from 'semantic-ui-react'
+
 
 
 export default function Dashboard() {
@@ -15,7 +17,12 @@ export default function Dashboard() {
                 <Route exact path="/jobAdverts" component={SideBar}/>
                     </Grid.Column>
                     <Grid.Column width={12}>
-                    <Route exact path="/" />
+                    <Route exact path="/" >
+                    < Image
+                        size='large'
+                            src='https://res.cloudinary.com/kbsenay/image/upload/v1623965559/HRMSProject/HRMS_Logo_be7mw9.jpg'
+                       />
+                    </Route>
                     <Route exact path="/jobAdverts" component={JobAdvertList} />
                     <Route path="/jobAdverts/:id" component={JobAdvertDetail} />
                     </Grid.Column>

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Button, Card, Image } from 'semantic-ui-react'
 import JobAdvertService from '../Services/jobAdvertService'
 
-const src = '/images/Bil Bilişim Logo.jpg'
+
 
 
 export default function JobAdvertDetail() {

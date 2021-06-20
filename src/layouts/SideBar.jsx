@@ -1,33 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Menu, Dropdown } from 'semantic-ui-react'
-import CityService from '../Services/cityService'
-import _ from 'lodash'
-import axios from 'axios'
-
+import CityService from '../Services/cityService';
 
 
 export default function SideBar() {
 
-    const city = axios.city
-    const cityOptions = _.map(axios.city, (city, axios) => ({
-        key: axios.city,
-        text: city,
-        value: axios.city,
-      }))
-
-      const DropdownCityMultipleSearchSelection = () => (
-        <Dropdown placeholder='Şehir' fluid multiple selection search options={cityOptions} >
-        <Dropdown.Menu>
-            {
-                cities.map(city => (
-                    <Dropdown.Item >{city.cityName}</Dropdown.Item>
-                ))
-            }
-        </Dropdown.Menu>
-    </Dropdown>
-    )
-
-    
 
     const [cities, setCities] = useState([])
 
@@ -39,16 +16,27 @@ export default function SideBar() {
         });
     }, [])
 
-    
-
-
+    const cityOption = cities.map((city, index) => ({
+        key: index,
+        text: city.cityName,
+        value: city.id,
+    }));
 
 
     return (
         <div>
-            
+            <Dropdown
+                fluid
+                clearable
+                item
+                placeholder="Şehir"
+                search
+                selection
+                multiple
+                options={cityOption}
+            />
 
-            <DropdownCityMultipleSearchSelection/>
+
 
 
 
