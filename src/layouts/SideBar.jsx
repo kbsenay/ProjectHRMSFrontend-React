@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Menu, Dropdown } from 'semantic-ui-react'
 import CityService from '../Services/cityService';
+import JobPositionService from '../Services/jobPositionService';
 
 
 export default function SideBar() {
@@ -16,10 +17,25 @@ export default function SideBar() {
         });
     }, [])
 
+    const [jobPositions, setJobPositions] = useState([])
+
+    useEffect(() => {
+        let jobPositionService = new JobPositionService()
+        jobPositionService.getAll().then(result => {
+            setJobPositions(result.data.data)
+        });
+    }, []);
+
     const cityOption = cities.map((city, index) => ({
         key: index,
         text: city.cityName,
         value: city.id,
+    }));
+
+    const jobPositionOption = jobPositions.map((jobPosition, index) => ({
+        key: index,
+        text: jobPosition.jobPosition,
+        value: jobPosition.id,
     }));
 
 
@@ -36,19 +52,17 @@ export default function SideBar() {
                 options={cityOption}
             />
 
-
-
-
-
-            <Menu vertical>
-                <Menu.Item
-                    name='İş Pozisyonu'
-
-                >
-
-                    İş Pozisyonu
-                </Menu.Item>
-            </Menu>
+            <Dropdown
+            style={{marginTop:'2em'}}
+                fluid
+                clearable
+                item
+                placeholder="Pozisyon"
+                search
+                selection
+                multiple
+                options={jobPositionOption}
+            />
 
             <Menu vertical>
                 <Menu.Item
