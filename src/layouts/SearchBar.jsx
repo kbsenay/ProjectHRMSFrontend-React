@@ -27,7 +27,7 @@ export default function SearchBar() {
 
     <Container>
       <div>
-        <Menu className="searchbar">
+        <Menu id="testId" className="searchbarr">
           <Input type='text' inputPosition='left' icon='search' iconPosition='left' placeholder='Pozisyon, firma, sektör...' />
           
             <Dropdown
@@ -50,7 +50,7 @@ export default function SearchBar() {
           </Menu.Item>
           <Menu.Item>
             <div class="detailed-search">
-              <a href="http://localhost:3000/jobAdverts/" onClick="('http://localhost:3000/jobAdverts/')">
+              <a href="http://localhost:3000/is-ilanlari/" onClick="('http://localhost:3000/is-ilanlari/')">
                 DETAYLI ARA
               </a>
             </div>

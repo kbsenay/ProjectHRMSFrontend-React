@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, Image, Rail, Segment } from 'semantic-ui-react'
+import { Card, Image, Header, Segment, Container } from 'semantic-ui-react'
 import JobAdvertService from '../Services/jobAdvertService'
 
 export default function JobAdvertList() {
@@ -15,17 +15,21 @@ export default function JobAdvertList() {
     return (
 
         <div>
-            <Card.Group>
-                {
+            <Header as='h2'>İş İlanları</Header>
+            {
                     jobAdverts.map(jobAdvert => (
+            <Card.Group>
+               
                         <Card fluid>
-                            <Link to={`/jobAdverts/${jobAdvert.id}`} >
+                            <Container>
+                        <Link to={`/is-ilanlari/${jobAdvert.id}`} >
                                 <Card.Content>
                                     <Image
                                         floated='left'
                                         size='small'
-                                        src='https://res.cloudinary.com/kbsenay/image/upload/v1623965560/HRMSProject/Bil_Bili%C5%9Fim_Logo_xstabb.jpg'
+                                        src={jobAdvert.photo}
                                     />
+                                    
                                     <Card.Header><font size="5" color="black">{jobAdvert.jobPosition?.position}</font></Card.Header>
                                     <Card.Meta>{jobAdvert.employer?.companyName}</Card.Meta>
                                     <Card.Meta>{jobAdvert.city?.cityName}</Card.Meta>
@@ -42,10 +46,14 @@ export default function JobAdvertList() {
                                        
                                     </div>
                                 </Card.Content>
-                            </Link>
+                                </Link>
+                                </Container>
                         </Card>
-                    ))}
+                       
+                   
             </Card.Group>
+            
+             ))}
         </div>
     )
 }

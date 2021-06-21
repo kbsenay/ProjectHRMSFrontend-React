@@ -25,7 +25,7 @@ export default function JobAdvertDetail() {
                         <Image
                             floated='left'
                             size='small'
-                            src='https://res.cloudinary.com/kbsenay/image/upload/v1623965560/HRMSProject/Bil_Bili%C5%9Fim_Logo_xstabb.jpg'
+                            src={jobAdvert.photo}
                         />
                         <Card.Header><font size="5" color="black">{jobAdvert.jobPosition?.position}</font></Card.Header>
                         <Card.Meta>{jobAdvert.employer?.companyName}</Card.Meta>

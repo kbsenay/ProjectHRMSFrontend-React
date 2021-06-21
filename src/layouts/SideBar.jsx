@@ -34,7 +34,7 @@ export default function SideBar() {
 
     const jobPositionOption = jobPositions.map((jobPosition, index) => ({
         key: index,
-        text: jobPosition.jobPosition,
+        text: jobPosition.position,
         value: jobPosition.id,
     }));
 

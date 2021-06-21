@@ -12,6 +12,9 @@ export default class JobAdvertService{
     getAllById(id){
         return axios.get("http://localhost:8080/app/jobadvert/getByJobAdvertId?id="+id)
     }
+    add(){
+        return axios.post("http://localhost:8080/app/jobadvert/add")
+    }
 
 
     
