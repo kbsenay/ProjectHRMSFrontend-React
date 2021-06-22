@@ -150,7 +150,7 @@ export default function NewJobAdvert() {
                             <Dropdown
                                 clearable
                                 item
-                                placeholder="Çalışma Süresi"
+                                placeholder="Çalışma Şekli"
                                 search
                                 selection
                                 onChange={(event, data) =>
@@ -163,7 +163,7 @@ export default function NewJobAdvert() {
                         <Form.Field>
                             <Grid stackable>
                                 <Grid.Column width={8}>
-                                    <label style={{ fontWeight: "bold" }}>Maaş aralığı MİNİMUM</label>
+                                    <label style={{ fontWeight: "bold" }}>Taban Maaş</label>
                                     <Input
                                         style={{ width: "100%" }}
                                         type="number"
@@ -181,7 +181,7 @@ export default function NewJobAdvert() {
                                     )}
                                 </Grid.Column>
                                 <Grid.Column width={8}>
-                                    <label style={{ fontWeight: "bold" }}>Maaş aralığı MAKSİMUM</label>
+                                    <label style={{ fontWeight: "bold" }}>Tavan Maaş</label>
                                     <Input
                                         style={{ width: "100%" }}
                                         type="number"
@@ -204,7 +204,7 @@ export default function NewJobAdvert() {
                         <Form.Field>
                             <Grid stackable>
                                 <Grid.Column width={8}>
-                                    <label style={{ fontWeight: "bold" }}>Açık Posisyon sayısı</label>
+                                    <label style={{ fontWeight: "bold" }}>Açık Posisyon Sayısı</label>
                                     <Input
                                         style={{ width: "100%" }}
                                         id="openPositions"
@@ -223,7 +223,7 @@ export default function NewJobAdvert() {
                                     )}
                                 </Grid.Column>
                                 <Grid.Column width={8}>
-                                    <label style={{ fontWeight: "bold" }}>Son başvuru tarihi</label>
+                                    <label style={{ fontWeight: "bold" }}>Son Başvuru Tarihi</label>
                                     <Input
                                         style={{ width: "100%" }}
                                         type="date"

@@ -22,6 +22,10 @@ export default function Navi() {
         setIsAuthenticated(true)
     }
 
+    function handleApplication() {
+        setIsAuthenticated(true)
+    }
+
     // function handleNewJobAdvertAccess() {
     //     setIsAuthenticated(false)
 
@@ -43,6 +47,14 @@ export default function Navi() {
                             src='https://res.cloudinary.com/kbsenay/image/upload/v1623965559/HRMSProject/HRMS_Logo_be7mw9.jpg'
                         />
                     </Menu.Item>
+
+                    <Menu.Menu position='left'>
+                        <Menu.Item color='teal'>
+                            <a href="/basvurularim" >
+                                Başvurularım
+                            </a>
+                        </Menu.Item>
+                    </Menu.Menu>
 
 
                     <Menu.Menu position='right'>

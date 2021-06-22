@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Button, Card, Image } from 'semantic-ui-react'
-import JobAdvertService from '../Services/jobAdvertService'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { Button, Card, Image } from 'semantic-ui-react';
+import JobAdvertService from '../Services/jobAdvertService';
+import { useDispatch } from 'react-redux';
+import { applyToJobAdvert } from '../store/actions/jobAdvertApplyActions';
 
 
 
 
 export default function JobAdvertDetail() {
+
+    // const dispatch = useDispatch()
     let { id } = useParams()
 
     const [jobAdvert, setJobAdvert] = useState({});
@@ -15,6 +19,10 @@ export default function JobAdvertDetail() {
         let jobAdvertService = new JobAdvertService()
         jobAdvertService.getAllById(id).then(result => setJobAdvert(result.data.data))
     }, []);
+
+    // const handleApplyJobAdvert = (jobAdvert) => {
+    //     dispatch(applyToJobAdvert(jobAdvert))
+    // }
 
     return (
         <div>
@@ -37,7 +45,7 @@ export default function JobAdvertDetail() {
                     </Card.Content>
                     <Card.Content extra>
                         <div>
-                            <Button floated='right' color='teal'>BAŞVUR</Button>
+                            <Button floated='right' color='teal' >BAŞVUR</Button>
                         </div>
                     </Card.Content>
                 </Card>

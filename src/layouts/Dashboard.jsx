@@ -31,6 +31,7 @@ export default function Dashboard() {
                     <Route  path="/is-ilani-ver" component={NewJobAdvert} />
                     <Route exact path="/is-ilanlari" component={JobAdvertList} />
                     <Route path="/is-ilanlari/:id" component={JobAdvertDetail} />
+                    <Route path="/basvurularim"/>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

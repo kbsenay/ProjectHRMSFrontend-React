@@ -27,7 +27,7 @@ export default function JobAdvertList() {
                                     <Image
                                         floated='left'
                                         size='small'
-                                        src={jobAdvert.photo}
+                                        src={jobAdvert.employer?.photo}
                                     />
                                     
                                     <Card.Header><font size="5" color="black">{jobAdvert.jobPosition?.position}</font></Card.Header>

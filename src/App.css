@@ -10,3 +10,12 @@
 .ui.searchbarr.menu{
   margin-top: 3em !important;
 }
+
+.ui.container.filterContainer{
+  width: 80% !important;
+  padding-top: 1em !important;  
+  padding-bottom: 1em !important; 
+ border: 1px solid transparent !important;
+ background-color: rgba(255, 255, 255, 0.589) !important;
+ border-radius: 15px !important;
+ }
