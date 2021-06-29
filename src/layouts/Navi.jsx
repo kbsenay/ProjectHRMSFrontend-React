@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Menu, Container, Image, Button } from 'semantic-ui-react'
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
+import MyApplications from './MyApplications'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import JobAdvertAccess from './JobAdvertAccess'
-import Main from '../pages/Main'
+
 import NewJobAdvert from '../pages/NewJobAdvert'
 
 export default function Navi() {
@@ -22,19 +23,10 @@ export default function Navi() {
         setIsAuthenticated(true)
     }
 
-    function handleApplication() {
-        setIsAuthenticated(true)
+    function handleJobAdvertAccess() {
+        setIsAuthenticated(false)
     }
 
-    // function handleNewJobAdvertAccess() {
-    //     setIsAuthenticated(false)
-
-    // }
-
-    // function handleNewJobAdvertNotAccess() {
-    //     setIsAuthenticated(false)
-
-    // }
 
     return (
         <div>
@@ -48,25 +40,10 @@ export default function Navi() {
                         />
                     </Menu.Item>
 
-                    <Menu.Menu position='left'>
-                        <Menu.Item color='teal'>
-                            <a href="/basvurularim" >
-                                Başvurularım
-                            </a>
-                        </Menu.Item>
-                    </Menu.Menu>
-
+                    {isAuthenticated && <MyApplications signOut={handleSignOut} />}
 
                     <Menu.Menu position='right'>
-                        <Menu.Item >
-                            <Button color='teal'  >
-                                <a href="/is-ilani-ver" target="_blank">
-                                    İş İlânı Ver
-                                </a>
-                            </Button>
-                        </Menu.Item>
-
-                        {/* {isAuthenticated ? <Main/>:<JobAdvertAccess/>} */}
+                        {!isAuthenticated && <JobAdvertAccess signOut={handleJobAdvertAccess} />}
                         {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut signIn={handleSignIn} />}
                     </Menu.Menu>
                 </Menu>

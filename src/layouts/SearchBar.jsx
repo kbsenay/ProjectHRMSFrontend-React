@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Dropdown, Button, Menu, Container, Input, Icon } from 'semantic-ui-react'
+import { Dropdown, Button, Menu, Container, Input} from 'semantic-ui-react'
 import CityService from '../Services/cityService';
 
 

@@ -6,6 +6,7 @@ import { Route } from 'react-router';
 import JobAdvertDetail from '../pages/JobAdvertDetail';
 import { Image } from 'semantic-ui-react'
 import NewJobAdvert from '../pages/NewJobAdvert';
+import NewJobAdvertAdd from '../pages/NewJobAdvertAdd';
 
 
 
@@ -28,7 +29,8 @@ export default function Dashboard() {
                        /></Route>
                     
                     <Route exact path="/isveren"/>
-                    <Route  path="/is-ilani-ver" component={NewJobAdvert} />
+                    {/* <Route  path="/is-ilani-ver2" component={NewJobAdvert} /> */}
+                    <Route  path="/is-ilani-ver" component={NewJobAdvertAdd} />
                     <Route exact path="/is-ilanlari" component={JobAdvertList} />
                     <Route path="/is-ilanlari/:id" component={JobAdvertDetail} />
                     <Route path="/basvurularim"/>

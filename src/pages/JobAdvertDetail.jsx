@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Button, Card, Image } from 'semantic-ui-react';
 import JobAdvertService from '../Services/jobAdvertService';
 import { useDispatch } from 'react-redux';
-import { applyToJobAdvert } from '../store/actions/jobAdvertApplyActions';
+// import { applyToJobAdvert } from '../store/actions/jobAdvertApplyActions';
 
 
 

@@ -1,17 +1,18 @@
-// import React from 'react'
-// import { Button, Menu } from 'semantic-ui-react'
-// import { Link } from 'react-router-dom'
+import React from 'react'
+import { Menu, Button} from 'semantic-ui-react'
 
-// export default function JobAdvertAccess(props) {
-//     return (
-//         <div>
-//             <Menu.Item >
-//                 <Button color='teal' target="_blank" >
-//                     <a href="http://localhost:3000/is-ilanlari/" onClick="('http://localhost:3000/is-ilanlari/')">
-//                         İş İlânı Ver
-//                     </a>
-//                 </Button>
-//             </Menu.Item>
-//         </div>
-//     ) --------------------------sonra yapılacak-----------------
-// }
+export default function JobAdvertAccess() {
+    return (
+        <div>
+            <Menu.Menu position='right'>
+                <Menu.Item >
+                    <Button color='teal'  >
+                        <a href="/is-ilani-ver" target="_blank">
+                            İş İlânı Ver
+                        </a>
+                    </Button>
+                </Menu.Item>
+            </Menu.Menu>
+        </div>
+    )
+}
